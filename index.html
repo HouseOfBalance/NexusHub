@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resource-Intensive Page</title>
+    <title>Extremely Resource-Intensive Page</title>
     <style>
         .heavy-svg {
             width: 100%;
@@ -24,34 +24,47 @@
     </style>
 </head>
 <body>
-    <h1>Resource-Intensive Page</h1>
+    <h1>Extremely Resource-Intensive Page</h1>
     
     <!-- Heavy SVG -->
     <svg class="heavy-svg" viewBox="0 0 1000 1000">
-        <path d="M10 10 H 990 V 990 H 10 L 10 10" stroke="black" fill="transparent" stroke-width="10"/>
-        <!-- Repeat the above path to increase complexity -->
-        <!-- For demonstration, add more paths here -->
+        <!-- Generate a lot of paths to make the SVG complex -->
+        <g>
+            <path d="M10 10 H 990 V 990 H 10 L 10 10" stroke="black" fill="transparent" stroke-width="10"/>
+            <path d="M20 20 H 980 V 980 H 20 L 20 20" stroke="blue" fill="transparent" stroke-width="10"/>
+            <path d="M30 30 H 970 V 970 H 30 L 30 30" stroke="green" fill="transparent" stroke-width="10"/>
+            <!-- Repeat similar paths to increase complexity -->
+            <!-- For demonstration, add more paths here -->
+            <!-- You can copy and paste these lines to make the SVG more complex -->
+        </g>
     </svg>
 
     <!-- Excessive Animations -->
     <div class="animation"></div>
+    <div class="animation" style="animation-delay: 0.5s;"></div>
     <div class="animation" style="animation-delay: 1s;"></div>
+    <div class="animation" style="animation-delay: 1.5s;"></div>
     <div class="animation" style="animation-delay: 2s;"></div>
+    <div class="animation" style="animation-delay: 2.5s;"></div>
     <div class="animation" style="animation-delay: 3s;"></div>
+    <div class="animation" style="animation-delay: 3.5s;"></div>
     <div class="animation" style="animation-delay: 4s;"></div>
+    <div class="animation" style="animation-delay: 4.5s;"></div>
+    <div class="animation" style="animation-delay: 5s;"></div>
+    <div class="animation" style="animation-delay: 5.5s;"></div>
 
     <!-- Heavy JavaScript Computation -->
     <script>
         function heavyComputation() {
             let sum = 0;
-            for (let i = 0; i < 1e8; i++) {
-                sum += Math.sqrt(i);
+            for (let i = 0; i < 1e9; i++) {
+                sum += Math.sqrt(i) + Math.log(i) + Math.sin(i) + Math.cos(i);
             }
             console.log(sum);
         }
 
         // Run heavy computation repeatedly
-        setInterval(heavyComputation, 1000);
+        setInterval(heavyComputation, 500);
     </script>
 </body>
 </html>
